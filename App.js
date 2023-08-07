@@ -16,7 +16,7 @@ export default function App() {
     >
       <StatusBar style="auto" />
       <Text style={Style.words}>
-        2 of
+        2 <AntDesign name="heart" size={40} color="red" />f
         <Text style={Style.current}> 100</Text>
       </Text>
 

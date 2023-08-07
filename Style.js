@@ -18,7 +18,7 @@ export const Style = StyleSheet.create({
   word: { flexDirection: "row", width: "90%", height: 200 },
   wordSegment: { flex: 1, justifyContent: "center", alignItems: "center" },
   en: { fontWeight: "bold", fontSize: 40 },
-  tr: { fontWeight: "bold", fontSize: 30, color: "gray" },
+  tr: { fontWeight: "bold", fontSize: 25, color: "gray" },
   createButton: { position: "absolute", right: 20, bottom: 20 },
   circle: {
     width: 70,
