@@ -7,6 +7,8 @@ export const Style = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  words: { fontSize: 60, fontWeight: "bold" },
+  current: { color: "gray" },
   nav: {
     margin: 10,
     width: 200,

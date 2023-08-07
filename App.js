@@ -15,6 +15,10 @@ export default function App() {
       ]}
     >
       <StatusBar style="auto" />
+      <Text style={Style.words}>
+        2 of
+        <Text style={Style.current}> 100</Text>
+      </Text>
 
       <View style={Style.word}>
         <View style={Style.wordSegment}>
