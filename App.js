@@ -11,10 +11,19 @@ export default function App() {
     <View
       style={[
         Style.container,
-        { backgroundColor: !modal ? "white" : "rgba(37, 37, 37, 0.3)" },
+        { backgroundColor: !modal ? "white" : "rgba(37, 37, 37, 0.4)" },
       ]}
     >
       <StatusBar style="auto" />
+      <Word />
+      <Create modal={{ modal, setModal }} />
+    </View>
+  );
+}
+
+const Word = () => {
+  return (
+    <>
       <Text style={Style.words}>
         2 <AntDesign name="heart" size={40} color="red" />f
         <Text style={Style.current}> 100</Text>
@@ -36,11 +45,9 @@ export default function App() {
           </TouchableOpacity>
         </View>
       </View>
-
-      <Create modal={{ modal, setModal }} />
-    </View>
+    </>
   );
-}
+};
 
 const Create = (props) => {
   const { setModal } = props.modal;
