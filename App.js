@@ -1,20 +1,80 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { AntDesign, Ionicons } from "@expo/vector-icons";
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
+import { Modal, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Style } from "./Style";
 
 export default function App() {
+  const [modal, setModal] = useState(false);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View
+      style={[
+        Style.container,
+        { backgroundColor: !modal ? "white" : "rgba(37, 37, 37, 0.3)" },
+      ]}
+    >
       <StatusBar style="auto" />
+
+      <View style={Style.word}>
+        <View style={Style.wordSegment}>
+          <TouchableOpacity onPress={() => {}}>
+            <AntDesign name="left" size={30} color="black" />
+          </TouchableOpacity>
+        </View>
+        <View style={[Style.wordSegment, { flex: 3 }]}>
+          <Text style={Style.en}> Arbitrary </Text>
+          <Text style={Style.tr}>Rastgele</Text>
+        </View>
+        <View style={Style.wordSegment}>
+          <TouchableOpacity onPress={() => {}}>
+            <AntDesign name="right" size={30} color="black" />
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <Create modal={{ modal, setModal }} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const Create = (props) => {
+  const { setModal } = props.modal;
+  return (
+    <View style={Style.createButton}>
+      <View style={Style.circle}>
+        <TouchableOpacity onPress={() => setModal(true)}>
+          <Ionicons name="md-add" size={30} color="white" />
+        </TouchableOpacity>
+      </View>
+      <ModalView {...props} />
+    </View>
+  );
+};
+
+const ModalView = (props) => {
+  const { modal, setModal } = props.modal;
+  return (
+    <Modal
+      transparent
+      animationType="slide"
+      visible={modal}
+      onRequestClose={() => setModal(false)}
+    >
+      <View style={Style.modal}>
+        <TouchableOpacity style={Style.close} onPress={() => setModal(false)}>
+          <Text style={Style.cross}>x</Text>
+        </TouchableOpacity>
+
+        <TextInput placeholder="English" style={Style.textBox} />
+        <TextInput placeholder="Turkish" style={Style.textBox} />
+
+        <TouchableOpacity>
+          <View style={Style.button}>
+            <Text style={Style.buttonText}>Save</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+    </Modal>
+  );
+};
