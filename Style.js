@@ -21,15 +21,15 @@ export const Style = StyleSheet.create({
   tr: { fontWeight: "bold", fontSize: 30, color: "gray" },
   createButton: { position: "absolute", right: 20, bottom: 20 },
   circle: {
-    width: 50,
-    height: 50,
+    width: 70,
+    height: 70,
     backgroundColor: "black",
-    borderRadius: 25,
+    borderRadius: 35,
     justifyContent: "center",
     alignItems: "center",
   },
   textBox: {
-    width: 300,
+    width: 250,
     height: 50,
     margin: 5,
     backgroundColor: "#eaeaea",
@@ -38,7 +38,8 @@ export const Style = StyleSheet.create({
     fontSize: 20,
   },
   button: {
-    width: 300,
+    flexDirection: "row",
+    width: 250,
     height: 50,
     margin: 5,
     justifyContent: "center",
@@ -46,7 +47,12 @@ export const Style = StyleSheet.create({
     backgroundColor: "black",
     borderRadius: 25,
   },
-  buttonText: { fontWeight: "bold", color: "white", fontSize: 20 },
+  buttonText: {
+    marginLeft: 5,
+    fontWeight: "bold",
+    color: "white",
+    fontSize: 20,
+  },
   close: { position: "absolute", top: 15, right: 25 },
   cross: {
     color: "gray",

@@ -48,7 +48,7 @@ const Create = (props) => {
     <View style={Style.createButton}>
       <View style={Style.circle}>
         <TouchableOpacity onPress={() => setModal(true)}>
-          <Ionicons name="md-add" size={30} color="white" />
+          <Ionicons name="md-add" size={50} color="white" />
         </TouchableOpacity>
       </View>
       <ModalView {...props} />
@@ -75,6 +75,7 @@ const ModalView = (props) => {
 
         <TouchableOpacity>
           <View style={Style.button}>
+            <AntDesign name="heart" size={20} color="red" />
             <Text style={Style.buttonText}>Save</Text>
           </View>
         </TouchableOpacity>
